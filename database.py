@@ -1,4 +1,5 @@
 from models import User
 
 
-users = User
+users = [User]
+

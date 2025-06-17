@@ -19,4 +19,5 @@ class UserUpdate(UserBase):
 
 
 class User(UserBase):
-    id: UUID
+    id: int
+

@@ -1,3 +1,6 @@
+import uuid
+
+
 class User:
     def __init__(self,
                  id,
@@ -9,5 +12,6 @@ class User:
         self.name = name
         self.email = email
         self.is_active = is_active
+
 
 

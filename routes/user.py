@@ -1,0 +1,32 @@
+from http import HTTPStatus
+
+from fastapi import APIRouter
+from services.user import UserService
+
+user_router = APIRouter()
+
+
+@user_router.post("/")
+def create_user():
+    return UserService().create_user()
+
+
+@user_router.get("/", status_code=HTTPStatus.CREATED)
+def get_all_user():
+    return UserService().get_all_user()
+
+
+@user_router.get("/{user_id}", status_code=HTTPStatus.OK)
+def get_user_by_id(user_id: int):
+    return UserService().get_user_by_id(user_id)
+
+
+@user_router.put("/", status_code=HTTPStatus.OK)
+def update_user(user_id: int):
+    return UserService().update_user(user_id)
+
+
+@user_router.delete("/{user_id}", status_code=HTTPStatus.OK)
+def delete_user(user_id: int):
+    return UserService.delete_user(user_id)
+
