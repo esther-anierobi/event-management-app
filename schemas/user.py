@@ -1,3 +1,4 @@
+from dataclasses import Field
 from typing import Annotated
 from uuid import UUID
 
@@ -15,9 +16,9 @@ class UserCreate(UserBase):
 
 
 class UserUpdate(UserBase):
-    is_active: bool = False
+    is_active: bool = True
 
 
 class User(UserBase):
-    id: int
+    id: Annotated[int, Form()]
 
